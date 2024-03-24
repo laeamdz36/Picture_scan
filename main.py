@@ -1,4 +1,13 @@
-"""Modulo principal para toma de snapwhoots de camaras de red"""
+"""Modulo principal para toma de snapwhoots de camaras de red
+
+    # 1. Scan network for requiered mac address and return the ruquested IP
+    # Get and storage current ip address for required mac address
+    # Execute routine to get image from required ip address
+    # Storage images with timestamps named format and also name insert into tiny DB
+    # build email object with attachment, content sent the local hour format
+    # Send email to reciver
+
+"""
 
 from email.message import EmailMessage
 from tinydb import TinyDB, Query
@@ -9,9 +18,15 @@ import cv2
 import nmap
 
 
+def config():
+    """funcion de cofiguracion"""
+
+    return None
+
+
 def run_prgram():
     """Lazo de ejecucion principal"""
-
+    config()
     return None
 
 
