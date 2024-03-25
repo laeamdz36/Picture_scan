@@ -6,6 +6,7 @@
     # Storage images with timestamps named format and also name insert into tiny DB
     # build email object with attachment, content sent the local hour format
     # Send email to reciver
+    # 
 
 """
 
@@ -15,7 +16,7 @@ import datetime as dt
 import ssl
 import smtplib
 import nmap
-import network_util as net_u
+import net_scan as net_s
 
 
 def config():
@@ -27,7 +28,7 @@ def config():
 def run_program():
     """Lazo de ejecucion principal"""
     config()
-    cameras = net_u.get_cameras()
+    cameras = net_s.get_cameras()
     for cam in cameras:
         print(f"{cam}")
     return None
