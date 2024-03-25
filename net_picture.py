@@ -17,15 +17,10 @@ def build_url(camera, ip):
     return None
 
 
-def get_cameras() -> dict:
+def get_cameras():
     """Retorna las credenciales de las camaras registradas para ser monitoreadas"""
-    cams = {
-        "calle": {"user": "callemdz", "psw": "luismdz36"},
-        "pasillo": {"user": "luismdz36", "psw": "Luismdz36"},
-        "sala": {"user": "luismdz36", "psw": "Luismdz36"}
-    }
 
-    return cams
+    return None
 
 
 def run_main():
