@@ -14,8 +14,8 @@ from tinydb import TinyDB, Query
 import datetime as dt
 import ssl
 import smtplib
-import cv2
 import nmap
+import network_util as net_u
 
 
 def config():
@@ -24,12 +24,16 @@ def config():
     return None
 
 
-def run_prgram():
+def run_program():
     """Lazo de ejecucion principal"""
     config()
+    cameras = net_u.get_cameras()
+    for cam in cameras:
+        print(f"{cam}")
     return None
 
 
 if __name__ == "__main__":
 
-    run_prgram()
+    run_program()
+    print("Fin de programa")
