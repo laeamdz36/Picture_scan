@@ -29,9 +29,13 @@ def scan_network():
 
 def run_program():
     """Testing program fnuction"""
+
     scan_network()
 
 
 if __name__ == "__main__":
 
+    import config
+
+    pars = config.main_config()
     run_program()
