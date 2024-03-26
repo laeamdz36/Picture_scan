@@ -17,15 +17,17 @@ import ssl
 import smtplib
 import nmap
 import net_scan as net_s
-import net_picture as net_p
+
+
+def config():
+    """funcion de cofiguracion"""
+
+    return None
 
 
 def run_program():
     """Lazo de ejecucion principal"""
 
-    cameras = net_s.get_cameras()
-    for cam in cameras:
-        print(f"{cam}")
     return None
 
 
