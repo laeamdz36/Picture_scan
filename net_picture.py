@@ -1,6 +1,8 @@
 """Modulo para lectura y almaceamiento de imagenes desde las camaras ip"""
 
+from pathlib import Path
 import cv2
+import os
 
 
 def build_url(camera, ip):

@@ -1,6 +1,7 @@
 """Modulo para el escaneo de red"""
 
 import nmap
+import config
 # import config to get all parameters to obtain ip by mac
 
 
@@ -14,8 +15,11 @@ def scan_config() -> dict:
     return scan_cfg
 
 
-def scan_network(data):
+def scan_network():
     """Escaneo de red, obtencion de ip de hosts"""
+
+    # load main configuration of devices to scanned
+    data = config.main_config()
 
     # load configuraction for scanning
     scan_args = scan_config()
@@ -30,31 +34,28 @@ def scan_network(data):
 
             # Construccion de mac de host en iteracion
             mac = nm[host]["addresses"]["mac"]
-            for cam in data["cameras"]:
+            for cams in data["cameras"]:
                 # * Busquda y almacenamiento de las direcciones ip buscadas por mac
-                if data["cameras"][cam]["mac"] == mac:
-                    data["cameras"][cam]["ip"] = nm[host]["addresses"]["ipv4"]
+                if data["cameras"][cams]["mac"] == mac:
+                    data["cameras"][cams]["ip"] = nm[host]["addresses"]["ipv4"]
 
     # retorno de diccionario con info de ip agregadas
     return data
 
 
-def run_program(data):
+def run_program():
     """Testing program fnuction"""
 
-    result = scan_network(data)
+    result = scan_network()
 
     return result
 
 
 # * Ejecucion de programa idependiente
 if __name__ == "__main__":
-    # ejecucion del programa de forma independiente|°\\\\\7777
+    # ejecucion del programa de forma independiente
 
-    import config
-
-    pars = config.main_config()
-    info_get = run_program(pars)
+    info_get = run_program()
 
     for cam in info_get["cameras"]:
         print(f'{cam} -> {info_get["cameras"][cam]["ip"]}')
