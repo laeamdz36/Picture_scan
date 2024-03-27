@@ -49,6 +49,7 @@ def run_program(data):
 
 # * Ejecucion de programa idependiente
 if __name__ == "__main__":
+    # ejecucion del programa de forma independiente|°\\\\\7777
 
     import config
 
