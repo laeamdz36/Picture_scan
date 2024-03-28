@@ -17,6 +17,8 @@ import ssl
 import smtplib
 import nmap
 import net_scan as net_s
+import dir_mkr as dkr
+import net_picture as net_p
 import functools
 
 
@@ -56,6 +58,11 @@ def run_program():
     # run network scan to found the current ip for registered devices
     data = net_s.scan_network()
     print_scan_result(data)
+
+    # build directry for today and assign to a variable
+    path_job = dkr.build_dir()
+
+    net_p.get_pictures(path=path_job, data=data)
 
     return None
 

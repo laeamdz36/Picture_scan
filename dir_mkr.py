@@ -83,6 +83,8 @@ def build_dir(date="", today=True):
         else:
             print("Fallo en crear direcotrio contacte al admin")
 
+    return to_build
+
 
 if __name__ == "__main__":
 
