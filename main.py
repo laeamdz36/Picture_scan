@@ -40,7 +40,8 @@ def print_scan_result(data: dict) -> None:
         IP - mac address
     """
 
-    user_input = input("Impresion de resultados? (Y/N): ")
+    # user_input = input("Impresion de resultados? (Y/N): ")
+    user_input = "y"
 
     if user_input.lower() == "y":
         for cam in data["cameras"]:

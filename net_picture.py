@@ -41,10 +41,8 @@ def build_storage_dir(parent_path="", data=""):
     for cam in data["cameras"]:
 
         aux_path = os.path.join(parent_path, cam)
-        print(aux_path)
         os.makedirs(aux_path, exist_ok=True)
         aux_path = os.path.join(aux_path, build_file_name(cam))
-        print(aux_path)
         time.sleep(0.8)
         dict_paths[cam] = aux_path
 
@@ -68,10 +66,6 @@ def shoot_snap(cam, urls, paths):
 def take_pictures(paths, data):
     """Main execution for take picture from ip camera"""
 
-    for cam in data["cameras"]:
-        print(f'{cam} -> {data["cameras"][cam]["ip"]}')
-        print(f"Camara -> {cam} - {paths}")
-
     urls = build_url(data)
 
     for cam in data["cameras"]:
@@ -87,8 +81,6 @@ def get_pictures(path="", data=""):
 
     paths = build_storage_dir(path, data)
 
-    for path_dir in paths.values():
-        print(path_dir)
     take_pictures(paths, data)
 
     return None
